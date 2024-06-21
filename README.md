@@ -1,2 +1,2 @@
 # Computational-Genetics-
-Genetics course designed to provide a foundation in the field of statistics and genomics. 
+This is a course intended to explore the overlap between genetics and statistics. While providing a foundation in biological genetics, we will explore different tools and programs to run and decode genes. The syllabus provides an outline over the course of 23 weeks, exploring both the biological side, as well as data science using programs such as VCFtools, PLINK, R, etc. 
