@@ -4,25 +4,24 @@ Juliana Acosta-Uribe acostauribe@ucsb.edu
 
 This is an introductory course intended to explore the overlap between genetics and statistics using computational methods. While providing a foundation in biological genetics, we will explore different tools and programs to run and decode genes. The syllabus [spanish](Syllabus-espanol.pdf) provides an outline of the course, detailing the topics that will be covered, the software that we will be using and the recomended readings for the week. 
 
-This course is an introductory series divided in three units **Introduction to computational genetics**, **Population genetics**, and **Genetic epidemiology**. \ 
+This course is an introductory series divided in three modules **Introduction to computational genetics**, **Population genetics**, and **Genetic epidemiology**. \ 
 ```
 project
 │   README.md
-│   file001.txt    
+│   syllabus-espanol.pdf
+|   syllabus-english.pdf
 │
-└───folder1
-│   │   file011.txt
-│   │   file012.txt
+└───Module_1_introduction
 │   │
-│   └───subfolder1
-│       │   file111.txt
-│       │   file112.txt
+│   └───week_1
+│       │   reading_1.pdf
+│       │   code_1.sh
+│       │   lecture_video
 │       │   ...
 │   
-└───folder2
-    │   file021.txt
-    │   file022.txt
+└--- ...
 ```
+
 It is important that you watch the lecture videos so you can understand the concepts underlying the code.
 
 ## Required Software:
