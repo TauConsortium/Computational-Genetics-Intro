@@ -13,7 +13,7 @@ less
 cat
 ```
 
-People in Mac may need to install Homebrew https://brew.sh/index_es\
+People in Mac may need to install [Homebrew](https://brew.sh/index_es) \
 Those with Windows, make sure you have the WSL set up
 
 I have found some great free resources to start learning the command line:
