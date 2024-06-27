@@ -1,3 +1,5 @@
+## Introduction to Computational Genetics
+
 Before starting the lectures, we need to have your terminal and VScode running, then we can get started with the commmand line
 
 
