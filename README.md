@@ -4,7 +4,7 @@
 
 This is an introductory course intended to explore the overlap between genetics and statistics using computational methods. While providing a foundation in biological genetics, we will explore different tools and programs that will help us manipulate and study large genomic datasets.
 
-The syllabus [spanish](Syllabus-Espanol.pdf)/[english](Syllabus-English.pdf) provides an outline of the course, detailing the topics that will be covered, the software that we will be using and the recomended readings for the week. A great book to partner with the first two modules of the training is *Human evolutionary genetics: origins, peoples and disease. Jobling, Mark, and Chris Tyler-Smith. Garland Science, 2019.*
+The syllabus ([spanish](Syllabus-Espanol.pdf)/[english](Syllabus-English.pdf)) provides an outline of the course, detailing the topics that will be covered, the software that we will be using and the recomended readings for the week. A great book to partner with the first two modules of the training is *Human evolutionary genetics: origins, peoples and disease. Jobling, Mark, and Chris Tyler-Smith. Garland Science, 2019.*
 
 This course is an introductory series divided in three modules:
 - [Introduction to computational genetics](Module_1_Introduction)
