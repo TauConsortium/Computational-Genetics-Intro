@@ -1,7 +1,6 @@
 # Introduction to Computational Genetics
 
-
-### Juliana Acosta-Uribe acostauribe@ucsb.edu
+#### Instructor: Juliana Acosta-Uribe acostauribe@ucsb.edu
 
 This is an introductory course intended to explore the overlap between genetics and statistics using computational methods. While providing a foundation in biological genetics, we will explore different tools and programs to run and decode genes. 
 
