@@ -1,4 +1,4 @@
-#### The first week we will have an introduction to genomic sequencing and genetic variation. 
+### The first week we will have an introduction to genomic sequencing and genetic variation. 
 
 Watch our class: 
 
