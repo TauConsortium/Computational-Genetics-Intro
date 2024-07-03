@@ -25,4 +25,4 @@ I have found some great free resources to start learning the command line:
 
 The videos and materials for each week will be found at their respective folders.
 
-Watch all the class playlist in our YouTube Channel: [Sapanish](https://youtube.com/playlist?list=PLn6ugTFs5dzr_OOWBHvHT0JV_U_wf9yAg&feature=shared)
+> Follow the lectures in our YouTube Channel: [Spanish](https://youtube.com/playlist?list=PLn6ugTFs5dzr_OOWBHvHT0JV_U_wf9yAg&feature=shared)
