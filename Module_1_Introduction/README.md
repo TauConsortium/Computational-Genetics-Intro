@@ -21,3 +21,4 @@ Those with Windows, make sure you have the WSL set up
 I have found some great free resources to start learning the command line:
 - [Tutorial made by Ubuntu](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
 - [The Unix Workbench](https://seankross.com/the-unix-workbench/command-line-basics.html)
+
