@@ -17,4 +17,4 @@ Explore the Genome Browsers:
 - [National Center for Biotechnology Information](https://www.ncbi.nlm.nih.gov/gdv/)
 - [Ensembl](https://useast.ensembl.org/index.html)
 
-Which are the hg38 coordinates for *MAPT*
+Which are the hg38 coordinates for *MAPT*?
