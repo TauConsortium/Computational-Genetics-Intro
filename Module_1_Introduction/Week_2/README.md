@@ -20,4 +20,4 @@ Which of the following calls can be considered "good quality"
 
 Explore the most common files used in genetic data. The [samtools repository](https://github.com/samtools/hts-specs) details the specific features of each file type.
 
-Here we have uploaded [chromosome 22](Computational-Genetics-Intro/Module_1_Introduction/Week_2/chr22.vcf) for you tu visualize.
+Here we have uploaded a vcf of  [chromosome 22](Computational-Genetics-Intro/Module_1_Introduction/Week_2/chr22.vcf) for you tu visualize.
