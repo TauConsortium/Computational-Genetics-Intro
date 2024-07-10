@@ -5,6 +5,7 @@ Watch our class:
 **Spanish**\
 ![Spanish]()
 
+
 **Recommended Readings:**
 
 - The Variant Call Format (VCF) Version 4.2 Specification.  Danecek, P., Auton, A., Abecasis, G., Albers, C. A., Banks, E., 
@@ -20,4 +21,4 @@ Which of the following calls can be considered "good quality"
 
 Explore the most common files used in genetic data. The [samtools repository](https://github.com/samtools/hts-specs) details the specific features of each file type.
 
-Here we have uploaded a vcf of  [chromosome 22](/Module_1_Introduction/Week_2/chr22.vcf) for you tu visualize.
+Here we have uploaded a [vcf](/Module_1_Introduction/Week_2/chr22.vcf) of  chromosome 22 for you tu explore.
