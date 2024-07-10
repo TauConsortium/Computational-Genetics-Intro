@@ -1,4 +1,4 @@
-### Genomic sequencing and representing genetic variation as a Variant Call Format file
+## Genomic sequencing and representing genetic variation as a Variant Call Format file
 
 Watch our class: 
 
