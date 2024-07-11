@@ -5,6 +5,8 @@ Watch our class:
 **Spanish**\
 [![Spanish](https://img.youtube.com/vi/yje5AuvVrOA/0.jpg)](https://www.youtube.com/watch?v=yje5AuvVrOA)
 
+#[![English](https://img.youtube.com/vi/XXX/0.jpg)](https://www.youtube.com/watch?v=XXXX)
+
 **Recommended Readings:**
 
 Nurk S, Koren S, Rhie A, Rautiainen M, Bzikadze AV, Mikheenko A, Vollger MR, Altemose N, Uralsky L, Gershman A, Aganezov S. The complete sequence of a human genome. Science. 2022 Apr 1;376(6588):44-53. [pubmed](https://pubmed.ncbi.nlm.nih.gov/35357935/)
