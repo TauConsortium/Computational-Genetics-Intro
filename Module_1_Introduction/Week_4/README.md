@@ -10,5 +10,5 @@ Watch our class:
 - Auton et al.- A global reference for human genetic variation (2015)
 - Genomes are failing on diversity- Alice popejoy
 
-  **Homework:**
+**Homework:**
   
