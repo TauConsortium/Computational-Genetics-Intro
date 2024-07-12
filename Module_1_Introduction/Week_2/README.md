@@ -3,9 +3,10 @@
 Watch our class: 
 
 **Spanish**\
-![Spanish]()
 
+[![Spanish](https://img.youtube.com/vi/0NRCSABJl24/0.jpg)](https://www.youtube.com/watch?v=0NRCSABJl24)
 
+0NRCSABJl24
 **Recommended Readings:**
 
 - The Variant Call Format (VCF) Version 4.2 Specification.  Danecek, P., Auton, A., Abecasis, G., Albers, C. A., Banks, E., 
