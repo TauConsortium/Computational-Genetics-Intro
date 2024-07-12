@@ -6,7 +6,7 @@ Watch our class:
 [![Spanish](https://img.youtube.com/vi/yje5AuvVrOA/0.jpg)](https://www.youtube.com/watch?v=yje5AuvVrOA)
 
 **English**\
-[![English](https://img.youtube.com/vi/6cXuEhXQUmc.jpg)](https://youtube.com/watch?v=6cXuEhXQUmc)
+[![English](https://img.youtube.com/vi/6cXuEhXQUmc/0.jpg)](https://youtube.com/watch?v=6cXuEhXQUmc)
 
 **Recommended Readings:**
 
