@@ -1,10 +1,10 @@
 ## Human Genetic Variation and Diversity ##
 
-#Watch our class:
+##Watch our class:##
 
-#**Spanish**
+**Spanish**
 
-#**English** 
+**English** 
 
 **Recommended Readings:**
 - Auton et al.- A global reference for human genetic variation (2015)
