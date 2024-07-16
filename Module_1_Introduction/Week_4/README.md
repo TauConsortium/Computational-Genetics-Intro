@@ -1,6 +1,6 @@
 ## Human Genetic Variation and Diversity ##
 
-##Watch our class:##
+Watch our class:
 
 **Spanish**
 
