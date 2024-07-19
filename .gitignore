@@ -3,10 +3,10 @@
 #Module_1_Introduction/1.Introduction
 #Module_1_Introduction/2.Genetic_sequencing
 #Module_1_Introduction/3.Data_manipulation
-/Module_1_Introduction/4.Human_genetic_variation_and_diversity
-/Module_1_Introduction/5.Manipulating_genetic_data_with_Plink
-/Module_1_Introduction/6.Haplotypes_and_recombination
-/Module_1_Introduction/7.Data_imputation
+Module_1_Introduction/4.Human_genetic_variation_and_diversity/
+Module_1_Introduction/5.Manipulating_genetic_data_with_Plink/
+Module_1_Introduction/6.Haplotypes_and_recombination/
+Module_1_Introduction/7.Data_imputation
 Module_1_Introduction/8.Quality_control
 Module_1_Introduction/9.Kinship_and_genetic_relateedness
 Module_1_Introduction/10.Non-recombining_segments
