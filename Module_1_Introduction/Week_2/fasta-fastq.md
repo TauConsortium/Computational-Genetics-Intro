@@ -17,10 +17,10 @@ TCTGCTTGAGCAACTGGTGAAACTCCGCGCCTCACGCCCCGGGTGTGTCCTTGTCCAGGGGCGACGAGCATTCTGGGCGA
 
 A FASTQ file normally uses four lines per sequence.
 
-    Line 1 begins with a '@' character and is followed by a sequence identifier and an optional description (like a FASTA title line).
-    Line 2 is the raw sequence letters. A,T,C,G,N.
-    Line 3 begins with a '+' character and is optionally followed by the same sequence identifier (and any description) again.
-    Line 4 encodes the quality values for the sequence in Line 2, and must contain the same number of symbols as letters in the sequence.
+Line 1 begins with a '@' character and is followed by a sequence identifier and an optional description (like a FASTA title line).
+Line 2 is the raw sequence letters. A,T,C,G,N.
+Line 3 begins with a '+' character and is optionally followed by the same sequence identifier (and any description) again.
+Line 4 encodes the quality values for the sequence in Line 2, and must contain the same number of symbols as letters in the sequence.
 
 ```
 @SRR062634.321 HWI-EAS110_103327062:6:1:1446:951/2
