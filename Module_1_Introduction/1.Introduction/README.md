@@ -14,10 +14,10 @@ Nurk S, Koren S, Rhie A, Rautiainen M, Bzikadze AV, Mikheenko A, Vollger MR, Alt
 
 **Homework:**
 
-Explore the Genome Browsers:
+1. Explore the Genome Browsers:
 
 - [University of California Santa Cruz](https://genome.ucsc.edu/cgi-bin/hgGateway)
 - [National Center for Biotechnology Information](https://www.ncbi.nlm.nih.gov/gdv/)
 - [Ensembl](https://useast.ensembl.org/index.html)
 
-Which are the hg38 coordinates for *MAPT*?
+2. Which are the hg38 coordinates for *MAPT*?
