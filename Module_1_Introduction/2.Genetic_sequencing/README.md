@@ -20,7 +20,7 @@ genomewide data analysis: Perspectives for retinal research." Progress in retina
 **Homework:**
 
 Which of the following calls can be considered "good quality"
-![vcf_image](/Module_1_Introduction/Week_2/vcf_homework.png)
+![vcf_image](Module_1_Introduction/2.Genetic_sequencing/vcf_homework.png)
 
 Explore the most common files used in genetic data. The [samtools repository](https://github.com/samtools/hts-specs) details the specific features of each file type.
 
