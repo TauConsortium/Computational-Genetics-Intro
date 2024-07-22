@@ -19,9 +19,9 @@ genomewide data analysis: Perspectives for retinal research." Progress in retina
 
 **Homework:**
 
-Which of the following calls can be considered "good quality"
+1. Which of the following calls can be considered "good quality"
 ![vcf_image](vcf_homework.png)
 
-Explore the most common files used in genetic data. The [samtools repository](https://github.com/samtools/hts-specs) details the specific features of each file type.
+2. Explore the most common files used in genetic data. The [samtools repository](https://github.com/samtools/hts-specs) details the specific features of each file type. I have also added some examples of the [fasta/fastq files](fasta-fastq.md)
 
-Here we have uploaded a [vcf](/Module_1_Introduction/Week_2/chr22.vcf) of  chromosome 22 for you tu explore.
+3. Here we have uploaded a [vcf](/Module_1_Introduction/Week_2/chr22.vcf) of  chromosome 22 for you tu explore.
