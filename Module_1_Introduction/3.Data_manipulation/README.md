@@ -7,3 +7,11 @@ DePristo, M. A., ... & 1000 Genomes Project Analysis Group. (2011).
 - The variant call format and VCFtools. Bioinformatics, 27(15), 2156-2158.  Chaitankar, Vijender, et al. "Next generation sequencing technology and 
 genomewide data analysis: Perspectives for retinal research." Progress in retinal and eye research 55 (2016): 1-31
 
+**Homework**
+
+How many variants in `toy.1000GP.vcf` have a genotyping rate >80%?
+
+Genotyping rate is the number of variants with genotype data.
+Missingness rate is the proportion of missing data.
+
+Genotyping rate + missingness rate = 1 (100%)
