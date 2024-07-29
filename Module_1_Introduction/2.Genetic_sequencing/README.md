@@ -6,7 +6,8 @@ Watch our class:
 
 [![Spanish](https://img.youtube.com/vi/0NRCSABJl24/0.jpg)](https://www.youtube.com/watch?v=0NRCSABJl24)
 
-**English**\
+**English**
+
 [![English](https://img.youtube.com/vi/T53riKd3k6U/0.jpg)](https://youtube.com/watch?v=T53riKd3k6U)
 
 **Recommended Readings:**
@@ -32,6 +33,6 @@ Review the homework here:
 
 [![Spanish](https://img.youtube.com/vi/nzMmtcYzQ7o/0.jpg)](https://www.youtube.com/watch?v=nzMmtcYzQ7o)
 
-**English**\
+**English**
 
 [![English](https://img.youtube.com/vi/IsZVG7GmpCs/0.jpg)](https://youtube.com/watch?v=IsZVG7GmpCs)
