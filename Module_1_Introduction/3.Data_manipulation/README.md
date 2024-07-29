@@ -1,5 +1,14 @@
 ## Data Manipulation 
 
+Watch our class: 
+
+**Spanish**
+
+[![Spanish](https://img.youtube.com/vi/_tXTpzMNTtY/0.jpg)](https://www.youtube.com/watch?v=_tXTpzMNTtY)
+
+**English**
+
+[![English](https://img.youtube.com/vi/fyDsN2ctLl8/0.jpg)](https://youtube.com/watch?v=fyDsN2ctLl8)
 
 **Recommended Readings:** 
 - The Variant Call Format (VCF) Version 4.2 Specification.  Danecek, P., Auton, A., Abecasis, G., Albers, C. A., Banks, E., 
