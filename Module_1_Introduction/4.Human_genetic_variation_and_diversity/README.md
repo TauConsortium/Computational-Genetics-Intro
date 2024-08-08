@@ -15,6 +15,7 @@ Watch our class:
 - Genomes are failing on diversity- Alice popejoy
 
 **Homework:**
+
 A little hands on PLINK: 
 How many variants have a genotyping rate >80%?
 
