@@ -20,6 +20,7 @@ A little hands on PLINK:
 How many variants have a genotyping rate >80%?
 
 Genotypic rate is number of genotypes per variant with data 
+
 Genotypic rate + missingness = 100
 
   
