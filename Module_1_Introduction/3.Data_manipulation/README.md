@@ -29,6 +29,8 @@ Review the homework here:
 
 **Spanish** 
 
+[![Spanish](https://img.youtube.com/vi/DdTHejcw7-4/0.jpg)](https://www.youtube.com/watch?v=DdTHejcw7-4)
+
 
 **English**
 
