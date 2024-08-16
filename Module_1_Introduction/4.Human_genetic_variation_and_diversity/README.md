@@ -25,5 +25,7 @@ Genotypic rate is number of genotypes per variant with data
 Genotypic rate + missingness = 100
 
 **Review the homework here:**
+
+**English**
 [![English](https://img.youtube.com/vi/A5AApOrOTK8/0.jpg)](https://youtube.com/watch?v=A5AApOrOTK8)
   
