@@ -11,11 +11,12 @@ Watch our class:
 - The Structure of Haplotype Blocks in the Human Genome. SB Gabriel 2002
 
 **Homework:**
-Why are the haplotypes of African individuals smaller than those of Europeans and Asians? 
 
-What strategies can I use to determine the phase of my genotypes? 
+1. Why are the haplotypes of African individuals smaller than those of Europeans and Asians? 
 
-Explore the vcf with phase determination. 
+2. What strategies can I use to determine the phase of my genotypes? 
+
+3. Explore the vcf with phase determination. 
 
 
 
