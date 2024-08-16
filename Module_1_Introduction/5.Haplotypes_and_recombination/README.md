@@ -6,6 +6,8 @@ Watch our class:
 
 **English** 
 
+[![English](https://img.youtube.com/vi/rtqXneGxAIY/0.jpg)](https://youtube.com/watch?v=rtqXneGxAIY)
+
 **Recommended Readings:**
 - Browning & Browning - Identity by Descent Between Distant Relatives Detection and Applications (2012)
 - The Structure of Haplotype Blocks in the Human Genome. SB Gabriel 2002
