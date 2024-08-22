@@ -22,5 +22,8 @@ Watch our class:
 
 3. Explore the vcf with phase determination. 
 
+**Review the homework here:**
 
+**English** 
 
+[![English](https://img.youtube.com/vi/XbqqttgSYFw/0.jpg)](https://youtube.com/watch?v=XbqqttgSYFw)
