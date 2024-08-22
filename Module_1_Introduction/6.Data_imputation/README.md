@@ -2,6 +2,10 @@
 
 Watch our class:
 
+**English** 
+
+[![English](https://img.youtube.com/vi/Yh-5XxyZSSw/0.jpg)](https://youtube.com/watch?v=Yh-5XxyZSSw)
+
 **Spanish**
 
 **English** 
