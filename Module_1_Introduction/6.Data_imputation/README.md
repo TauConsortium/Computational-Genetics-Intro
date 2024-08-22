@@ -11,4 +11,4 @@ Watch our class:
 - Li et al. 2009 - Genotype Imputation
 
 **Homework:**
-  
+Create a top med account and inpute the vcf we are giving. 
