@@ -2,7 +2,11 @@
 
 Watch our class:
 
+**Spanish**
+
 [![Spanish](https://img.youtube.com/vi/jftHqUpwCBE/0.jpg)](https://youtube.com/watch?v=jftHqUpwCBE)
+
+**English**
 
 [![English](https://img.youtube.com/vi/UgEgZSFjZsQ/0.jpg)](https://youtube.com/watch?v=UgEgZSFjZsQ)
 
