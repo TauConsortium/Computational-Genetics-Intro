@@ -15,6 +15,6 @@ Watch our class:
 
 [KING](https://www.kingrelatedness.com) and the R package Kinship2. 
 
-For this tutorial we will be using an example [dataset](/workshop) provided from PRIMUS *Jeffrey Staples, Deborah A. Nickerson, and Jennifer E. Below (2013). Utilizing graph theory to select the largest set of unrelated individuals for genetic analysis. Genet Epidemiol 37, 136-41.*
+For this tutorial we will be using an example [dataset](Module_1_Introduction/8.Kinship_and_genetic_relatedness/Workshop) provided from PRIMUS *Jeffrey Staples, Deborah A. Nickerson, and Jennifer E. Below (2013). Utilizing graph theory to select the largest set of unrelated individuals for genetic analysis. Genet Epidemiol 37, 136-41.*
 
-All the files and scripts are in [workshop](/workshop) folder
+All the files and scripts are in [workshop](Module_1_Introduction/8.Kinship_and_genetic_relatedness/Workshop) folder
