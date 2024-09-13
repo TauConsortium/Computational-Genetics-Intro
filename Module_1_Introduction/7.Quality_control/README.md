@@ -25,6 +25,8 @@ Install the required software as it will be needed for the QC workshop
 
 Watch the tutorial: 
 
+[![Spanish](https://img.youtube.com/vi/2OrHpYIhN5k/0.jpg)](https://youtube.com/watch?v=2OrHpYIhN5k)
+
 [![English](https://img.youtube.com/vi/DJReDNyXfJg/0.jpg)](https://youtube.com/watch?v=DJReDNyXfJg)
 
 A good set of data to test the quality control r markdown [tutorial](https://github.com/acostauribe/genetic-data-QC/blob/main/redlat_qc.rmd) is the dataset provided by the Plink QC [pipeline](https://github.com/meyer-lab-cshl/plinkQC) from the Meyer Laboratory at Cold Spring Harbor. You can obtain data.bed/data.fam/data.bim [here](https://github.com/meyer-lab-cshl/plinkQC/tree/master/inst/extdata)\
