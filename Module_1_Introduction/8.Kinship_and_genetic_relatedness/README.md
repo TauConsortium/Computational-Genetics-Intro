@@ -18,4 +18,7 @@ Watch our class:
 For this tutorial we will be using an example dataset (MEX_pop.bed/MEX_pop.bim/MEX_pop.fam) provided from PRIMUS \
 *Jeffrey Staples, Deborah A. Nickerson, and Jennifer E. Below (2013). Utilizing graph theory to select the largest set of unrelated individuals for genetic analysis. Genet Epidemiol 37, 136-41.*
 
-All the files and scripts are in workshop folder
+All the files and scripts are in workshop folder.
+
+Homework: Use King to estimate the relatedness of the MEX_pop genomes and suggest a possible way of merging the 10 individuals into a single pedigree.
+Use Kingship2 to plot the proposed pedigree.
