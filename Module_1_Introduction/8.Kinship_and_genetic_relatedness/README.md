@@ -21,4 +21,4 @@ For this tutorial we will be using an example dataset (MEX_pop.bed/MEX_pop.bim/M
 All the files and scripts are in workshop folder.
 
 Homework: Use King to estimate the relatedness of the MEX_pop genomes and suggest a possible way of merging the 10 individuals into a single pedigree.
-Use Kingship2 to plot the proposed pedigree.
+Use Kingship2 to plot a plausible pedigree.
