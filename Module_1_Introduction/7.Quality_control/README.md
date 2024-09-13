@@ -25,7 +25,11 @@ Install the required software as it will be needed for the QC workshop
 
 Watch the tutorial: 
 
+**Spanish**
+
 [![Spanish](https://img.youtube.com/vi/2OrHpYIhN5k/0.jpg)](https://youtube.com/watch?v=2OrHpYIhN5k)
+
+**English**
 
 [![English](https://img.youtube.com/vi/DJReDNyXfJg/0.jpg)](https://youtube.com/watch?v=DJReDNyXfJg)
 
