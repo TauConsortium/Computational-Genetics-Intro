@@ -6,6 +6,8 @@ Watch our class:
 
 **English** 
 
+[![English](https://img.youtube.com/vi/Hu3tmGq9giY/0.jpg)](https://youtube.com/watch?v=Hu3tmGq9giY)
+
 **Recommended Readings:**
 - Browning & Browning - Identity by Descent Between Distant Relatives Detection and Applications (2012)
 - Speed, Balding - Relatedness in the postgenomic era Is it still useful? (2015)
