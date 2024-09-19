@@ -11,4 +11,6 @@ Watch our class:
 **Homework:**
 
 Explore the tools on Haplogrep using your own files, or the example datasets given on the site. 
+
 Haplogrep Github: https://github.com/genepi/haplogrep3
+
