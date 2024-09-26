@@ -25,4 +25,4 @@ Missingness rate is the proportion of missing data.
 
 Genotyping rate + missingness rate = 1 (100%)
 
-Files and material are in [workshop](/workshop)
+Files and material are in [workshop](Module_1_Introduction/3.Data_manipulation/workshop)
