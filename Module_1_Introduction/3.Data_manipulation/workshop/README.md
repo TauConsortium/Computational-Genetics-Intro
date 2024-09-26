@@ -7,7 +7,7 @@ Missingness rate is the proportion of missing data.
 
 Genotyping rate + missingness rate = 1 (100%)
 
-Review the homework here: 
+Review it here: 
 
 **Spanish** 
 
