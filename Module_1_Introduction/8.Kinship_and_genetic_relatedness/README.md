@@ -4,6 +4,8 @@ Watch our class:
 
 **Spanish**
 
+[![Spanish](https://img.youtube.com/vi/HEFHVpBCqX8/0.jpg)](https://youtube.com/watch?v=HEFHVpBCqX8)
+
 **English** 
 
 [![English](https://img.youtube.com/vi/Hu3tmGq9giY/0.jpg)](https://youtube.com/watch?v=Hu3tmGq9giY)
