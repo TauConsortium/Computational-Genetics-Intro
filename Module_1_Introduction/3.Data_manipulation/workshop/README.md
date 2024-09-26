@@ -1,4 +1,4 @@
-### Workshop
+## Workshop
 
 How many variants in `toy.1000GP.vcf` have a genotyping rate >80%?
 
@@ -7,7 +7,7 @@ Missingness rate is the proportion of missing data.
 
 Genotyping rate + missingness rate = 1 (100%)
 
-#### Review it here: 
+### Review it here: 
 
 **Spanish** 
 
