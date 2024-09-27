@@ -26,13 +26,3 @@ genomewide data analysis: Perspectives for retinal research." Progress in retina
 2. Explore the most common files used in genetic data. The [samtools repository](https://github.com/samtools/hts-specs) details the specific features of each file type. I have also added some examples of the [fasta/fastq files](fasta-fastq.md)
 
 3. Here we have uploaded a [vcf](/Module_1_Introduction/Week_2/chr22.vcf) of  chromosome 22 for you tu explore.
-
-Review the homework here: 
-
-**Spanish** 
-
-[![Spanish](https://img.youtube.com/vi/nzMmtcYzQ7o/0.jpg)](https://www.youtube.com/watch?v=nzMmtcYzQ7o)
-
-**English**
-
-[![English](https://img.youtube.com/vi/IsZVG7GmpCs/0.jpg)](https://youtube.com/watch?v=IsZVG7GmpCs)
