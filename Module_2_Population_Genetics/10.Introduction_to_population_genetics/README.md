@@ -2,9 +2,9 @@
 
 Watch our class:
 
-**Spanish**
-
 **English** 
+
+[![English](https://img.youtube.com/vi/u5_QeeBT6l8/0.jpg)](https://youtube.com/watch?v=u5_QeeBT6l8)
 
 
 **Recommended Readings:**
