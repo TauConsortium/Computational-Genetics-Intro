@@ -18,4 +18,4 @@ Watch our class:
 
 **Homework:**
 
-Create a top med account and inpute the vcf we are giving. 
+Create a top med account and inpute the vcf we are giving. The output quality control report is also given. 
