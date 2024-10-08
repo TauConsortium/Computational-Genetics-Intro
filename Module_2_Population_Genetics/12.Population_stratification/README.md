@@ -1,3 +1,5 @@
+## Population Stratification
+
 Watch our class:
 
 **Spanish**
