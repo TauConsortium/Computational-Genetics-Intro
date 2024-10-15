@@ -8,7 +8,7 @@ Watch our class:
 
 **English** 
 
-[![English](https://img.youtube.com/vi/cBQmOAiOBk00.jpg)](https://youtube.com/watch?v=cBQmOAiOBk0)
+[![English](https://img.youtube.com/vi/cBQmOAiOBk0/0.jpg)](https://youtube.com/watch?v=cBQmOAiOBk0)
 
 **Recommended Readings:**
 - Benton et al. - 2021 - The influence of evolutionary history on human health and disease
