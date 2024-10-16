@@ -15,5 +15,5 @@ Watch the following videos on Principal Component analysis:
 
 [StatQuest: PCA main ideas](https://www.youtube.com/watch?v=HMOI_lkzW08)
 
-[(StatQuest: Principal Component Analysis, Step-by-Step](https://www.youtube.com/watch?v=FgakZw6K1QQ)
+[StatQuest: Principal Component Analysis, Step-by-Step](https://www.youtube.com/watch?v=FgakZw6K1QQ)
 
