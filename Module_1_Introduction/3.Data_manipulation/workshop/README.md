@@ -13,7 +13,6 @@ Genotyping rate + missingness rate = 1 (100%)
 
 [![Spanish](https://img.youtube.com/vi/DdTHejcw7-4/0.jpg)](https://www.youtube.com/watch?v=DdTHejcw7-4)
 
-
 **English**
 
 [![English](https://img.youtube.com/vi/xv8NLtG3KtA/0.jpg)](https://youtube.com/watch?v=xv8NLtG3KtA)

@@ -15,8 +15,8 @@ less
 cat
 ```
 
-People in Mac may need to install [Homebrew](https://brew.sh/index_es) \
-Those with Windows, make sure you have the WSL set up
+People using Mac OS may need to install [Homebrew](https://brew.sh/index_es) \
+Those with Windows OS, make sure you have the WSL set up
 
 I have found some great free resources to start learning the command line:
 - [Tutorial made by Ubuntu](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
@@ -25,4 +25,4 @@ I have found some great free resources to start learning the command line:
 
 The videos and materials for each week will be found at their respective folders.
 
-> Follow the lectures in our YouTube Channel: [Spanish](https://youtube.com/playlist?list=PLn6ugTFs5dzr_OOWBHvHT0JV_U_wf9yAg&feature=shared), [English](https://www.youtube.com/playlist?list=PLn6ugTFs5dzqZJTnLmGhkbzJoHo5JZhzI)
+> Watch the recordings of our lectures in our YouTube Channel: [Spanish](https://youtube.com/playlist?list=PLn6ugTFs5dzr_OOWBHvHT0JV_U_wf9yAg&feature=shared), [English](https://www.youtube.com/playlist?list=PLn6ugTFs5dzqZJTnLmGhkbzJoHo5JZhzI)

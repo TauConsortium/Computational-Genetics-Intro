@@ -12,13 +12,14 @@ Watch our class:
 
 
 **Recommended Readings:**
-- Auton et al.- A global reference for human genetic variation (2015)
+- Auton et al.- A global reference for human genetic variation
 - Genomes are failing on diversity- Alice popejoy
 - Data Management and Summary Statistics with PLINK
 
-**Homework:**
+**Workshop:**
 
 A little hands on PLINK: 
+
 How many variants have a genotyping rate >80%?
 
 Genotypic rate is number of genotypes per variant with data 

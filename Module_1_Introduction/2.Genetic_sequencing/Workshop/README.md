@@ -1,4 +1,4 @@
-Review the workshop here: 
+Review the hands-on workshop here: 
 
 **Spanish** 
 

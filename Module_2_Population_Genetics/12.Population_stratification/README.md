@@ -1,13 +1,5 @@
 ## Population Stratification
 
-Watch our class:
-
-**Spanish**
-
-
-**English** 
-
-
 
 **Recommended Readings:**
 - Novembre et al. - 2008 - Genes mirror geography within Europe
