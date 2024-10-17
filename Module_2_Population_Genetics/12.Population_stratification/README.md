@@ -1,5 +1,12 @@
 ## Population Stratification
 
+**Spanish**
+
+[![Spanish](https://img.youtube.com/vi/2TkFabh42aQ/0.jpg)](https://youtube.com/watch?v=2TkFabh42aQ)
+
+**English** 
+
+[![English](https://img.youtube.com/vi/njlB7xSOxK4/0.jpg)](https://youtube.com/watch?v=njlB7xSOxK4)
 
 **Recommended Readings:**
 - Novembre et al. - 2008 - Genes mirror geography within Europe
