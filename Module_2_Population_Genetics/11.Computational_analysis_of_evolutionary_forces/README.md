@@ -25,3 +25,13 @@ You sequenced 215 individuals with the following phenotypes:
 Calculate the expected frequencies of the T (dominant) and C (recessive) alleles, and the expected genotypes (TT, TC and CC) under the HWE.
 
 Is the observed variant outside HWE?
+
+Review the Assignment: 
+
+**Spanish**
+
+[![Spanish](https://img.youtube.com/vi/jmhfEh-nqqU/0.jpg)](https://youtube.com/watch?v=jmhfEh-nqqU)
+
+**English** 
+
+[![English](https://img.youtube.com/vi/bVxZ8gfh6fg/0.jpg)](https://youtube.com/watch?v=bVxZ8gfh6fg)
