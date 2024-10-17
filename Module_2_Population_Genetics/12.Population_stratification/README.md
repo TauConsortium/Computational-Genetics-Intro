@@ -1,5 +1,7 @@
 ## Population Stratification
 
+Watch our class: 
+
 **Spanish**
 
 [![Spanish](https://img.youtube.com/vi/2TkFabh42aQ/0.jpg)](https://youtube.com/watch?v=2TkFabh42aQ)
