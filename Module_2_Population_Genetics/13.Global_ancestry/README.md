@@ -10,6 +10,9 @@ You can extract the bed/bim/fam files using `tar -xzf 1000GP.toy.tar.gz`
 
 **Other resources**
 The StatQuest channel in youtube has some great videos to understabd the mathematical basis of PCA and K-means clustering.
-(PCA in 5 minutes)[]
-(PCA step by step)[https://youtu.be/FgakZw6K1QQ?si=ItkqS1KSTnOmDZ5Y]
-(K-means clustering)[https://youtu.be/4b5d3muPQmA?si=SX2hsyRVBnOV4IdL]
+
+[PCA in 5 minutes](https://youtu.be/HMOI_lkzW08?si=MqSZi46xOfaeUYTi)
+
+[PCA step by step](https://youtu.be/FgakZw6K1QQ?si=ItkqS1KSTnOmDZ5Y)
+
+[K-means clustering](https://youtu.be/4b5d3muPQmA?si=SX2hsyRVBnOV4IdL)
