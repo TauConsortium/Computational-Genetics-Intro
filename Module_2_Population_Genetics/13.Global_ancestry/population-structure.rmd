@@ -1,0 +1,215 @@
+---
+title: "Population_stratification"
+author: "Juliana Acosta-Uribe"
+date: '2024-23-10'
+output: html_document
+---
+
+# Principal Component Analysis
+#### Developed by Juliana Acosta-Uribe
+
+### Data:
+In this tutorial we will perform a Principal Component Analysis (PCA) of a subset of individuals from the [1000 Genome project](https://www.internationalgenome.org/) `1000G.toy`
+
+However, you can use your own plink formatted .*bed*, .*fam*, .*bim* set
+
+
+### Software:
+-[R](https://www.r-project.org/) or [RStudio](https://posit.co/download/rstudio-desktop/)\
+-[plink](https://www.cog-genomics.org/plink2/)\
+-[king](https://www.kingrelatedness.com/)
+
+
+### Environment
+This script is designed to be run as an [R markdown](https://rmarkdown.rstudio.com/lesson-1.html) file in R Studio. \
+This way you can run it in a step-by-step mode. You could also run it directly from the r command line if you already have a dataset of unrelated individuals and a dataframe specifying which population they belong to. 
+```         
+library(rmarkdown)
+render("path/to/your/file.Rmd")
+```
+
+Specify your prefix and the path for your working directory and required software in the following chunk:
+```{r environment-setup}
+if (!require("knitr", quietly = TRUE))
+install.packages("knitr")
+library(knitr)
+
+# Set your working directory:
+## Edit 'root.dir' and 'setwd' with the path to your working directory
+knitr::opts_chunk$set(root.dir = "~/PCA",
+                      dev = "png",
+                      dpi = 300,
+                      echo = FALSE,
+                      cache = TRUE)
+setwd("~/PCA")
+
+# Set up path to software:
+## Give the paths to plink, king
+Sys.setenv(plink='/home/acostauribe/bin/plink')
+Sys.setenv(king='/home/acostauribe/bin/king')
+
+# Give the name of your starting file without the .bed or .vcf.gz extension
+prefix='1000G.toy'
+Sys.setenv(prefix=prefix)
+```
+
+### Principal Component Analysis workflow
+
+**1. Get a set of unrelated Samples** 
+
+We will use King to output a set of unrelated individuals from our cohort.
+This will create a list of unrelated individuals (prefix.king.unrelated.txt) that you can extract from using plink
+```{bash, get_unrelated}
+$king -b $prefix.bed --unrelated --prefix $prefix.king.
+$plink --bfile $prefix --keep $prefix.king.unrelated.txt --make-bed --out $prefix.unr
+```
+
+**2. Retain variants with Minor Allelic Frequency > 10%**
+```{bash, filter-maf}
+$plink --bfile $prefix.unr --maf 0.10 --make-bed --out $prefix.unr.maf
+```
+
+**3. Filter for Linkage Disequilibrium and retain independent markers**
+Plink uses a *sliding window* approach to identify variants in linkage disequilibrium. There are many options to modify the behavior or this approach in [plink's docummentation](https://www.cog-genomics.org/plink/1.9/ld#indep). The LD pruning requires that the *.bim* file has variant IDs in the second column. If no variants have been assigned, you could do a preliminary step using [--set-missing-var-ids](https://www.cog-genomics.org/plink/1.9/data#set_missing_var_ids).
+
+For LD pruning we will use the following:
+--indep-pairwise <window size>['kb'] <step size (variant ct)> <r^2 threshold>
+
+```{bash, filter-LD}
+# Identify variants in LD
+$plink --bfile $prefix.unr.maf --indep-pairwise 50 10 0.2 
+
+# Retain independent variants
+$plink --bfile $prefix.unr.maf --extract plink.prune.in --make-bed --out $prefix.unr.maf.ld
+```
+
+**4. Perform a PCA using Plink**
+
+After the LD pruning we should have a dataset for > 100.000 variants to identify population structure.
+Plink  calculate the eigenvectors and eigenvalues using the methods . Eigenvectors are written to prefix.unr.maf.ld.pca.eigenvec, and top eigenvalues are written to prefix.unr.maf.ld.pca.eigenval. The eigenvectors represent the directions or components in the original variable space, while the eigenvalues quantify the amount of variance explained by each eigenvector.
+The 'header' modifier adds a header line to the .eigenvec file(s), and the 'tabs' modifier makes the .eigenvec file(s) tab- instead of space-delimited.
+
+NOte that plink uses the PCA algorithm from [GCTA](https://yanglab.westlake.edu.cn/software/gcta/#PCA)
+```{bash, perform-pca}
+$plink --bfile $prefix.unr.maf.ld --pca header tabs --out $prefix.unr.maf.ld.pca
+```
+
+**Plot the PCA**
+
+We will use ggplot2 to get a beautiful PCA plot
+Plink's `prefix.unr.maf.ld.pca.eigenvec.eigenvec` contains the eigenvectors (values of principal components)
+
+Load the dataframe we are going to plot: \
+Notice that in our  previous command we determined the output to be separates with tab '\t', and to have a header
+```{r}
+eigenvec = read.delim("1000G.toy.unr.maf.ld.pca.eigenvec", sep='\t', header=TRUE)
+```
+
+We also need to add the correspondent continent or subpopulation that each individual belongs to. For the '1000G.toy' dataset I will use the `population_lookup.txt` dataframe. Using the `match` function, we will create a new column in 'eigenvec' called 'Continent' according to the identity of the Population column
+```{r}
+lookup_dataframe = read.delim("population_lookup.txt", header = TRUE )
+eigenvec$POPULATION = lookup_dataframe$POPULATION[match(eigenvec$IID, lookup_dataframe$IID)]
+eigenvec$CONTINENT = lookup_dataframe$CONTINENT[match(eigenvec$IID, lookup_dataframe$IID)]
+```
+
+Load the library(ggplot2) and the 'eigenvec' dataset using ggplot
+```{r}
+if (!require("ggplot2", quietly = TRUE))
+install.packages("ggplot2")
+library(ggplot2)
+
+ggplot(eigenvec)
+```
+
+This command does not plot anything but a gray canvas. 
+It defines the dataset for the plot and creates an empty base on top of which we can add additional layers. \
+ggplot2 uses the concept of *aesthetics*, which map dataset attributes to the visual features of the plot.  
+The aesthetics are mapped within the `aes()` function to construct the final mappings.
+
+You will have to specify which are the values that you want to use for each axis.
+In this example we want PC1 on the x-axis and PC2 on the y-axis
+```{r}
+ggplot(eigenvec, aes(x=PC1, y=PC2))
+```
+Even though the x and y are specified, there are no points or lines in it. This is because, ggplot doesn't assume that you meant a scatterplot or a line chart to be drawn. You only told ggplot what dataset to use and what columns should be used for X and Y axis, but you haven't explicitly asked it to draw any points.
+
+To add points you need to add a geometric layer to define the shapes to be plotted, in case of scatter plots, use `geom_point()`.
+To specify a layer of points which plots the PC1 on the x-axis and PC2 on the y-axis we need to add `+ geom_point()`
+Each geometric layer (or geoms) requires a different set of aesthetic mappings 
+The `geom_point()` function uses the aesthetics x and y to determine the x- and y-axis coordinates of the points to plot. 
+To link the geometric layer with a ggplot object we need to use the `+` operator
+```{r}
+ggplot(eigenvec, aes(x=PC1, y=PC2)) + geom_point()
+```
+You can also write your function in different lines. \
+The basic structure of a ggplot2 scatterplot graph is:
+```
+ggplot(___, aes(x = ___, y = ___) ) + 
+       geom_point( )
+```
+
+```{r}
+ggplot(eigenvec, aes(x=PC1, y=PC2)) + 
+       geom_point()
+```
+
+You can specify additional aesthetics for points \
+For example:
+Adjust the point size of a scatter plot using the size parameter \
+Change the point color of a scatter plot using the color parameter \
+Change parameter alpha to change the transparency of all points
+```
+ggplot(___,aes(x = ___, y = ___, )) + 
+  geom_point(color = ___, 
+             size  = ___, 
+             alpha = ___) 
+```
+
+```{r}
+ggplot(eigenvec, aes(x=PC1, y=PC2)) + 
+      geom_point( color="blue",
+                  size=3,
+                  alpha=0.3) #scale from 0-1, 1 being no transparency
+```
+
+If we want to change the shapes of the points according to a column value in our dataframe, we can add it as a variable in the aesthetics `(aes)` function
+```{r}
+ggplot(eigenvec, aes(x=PC1, y=PC3, 
+                     shape=CONTINENT)) + 
+        geom_point( color="blue",
+                    size=3,
+                    alpha=0.3)
+```
+This creates a label automatically
+
+You can mix shapes ans colors according to different columns
+```{r}
+ggplot(eigenvec, aes(x=PC1, y=PC2, 
+                     shape=CONTINENT,
+                     color=POPULATION)) + 
+        geom_point( size=3,
+                    alpha=0.8)
+```
+
+Or use one of the multiple [themes](https://ggplot2.tidyverse.org/reference/ggtheme.html) for fun colors and styles 
+```{r}
+ggplot(eigenvec, aes(x=PC1, y=PC2, 
+                     shape=CONTINENT,
+                     color=POPULATION)) + 
+        geom_point( size=3,
+                    alpha=0.8) +
+          theme_classic()
+```
+
+Add Title and Labels
+```{r}
+ggplot(eigenvec, aes(x=PC1, y=PC2, 
+                     shape=CONTINENT,
+                     color=POPULATION)) + 
+        geom_point( size=3,
+                    alpha=0.8) +
+          theme_classic() + 
+          labs(title="Principal Component Analysis", 
+                  subtitle="Subset of the 1000GP",
+                  caption="Made by Juliana Acosta-Uribe")
+```
