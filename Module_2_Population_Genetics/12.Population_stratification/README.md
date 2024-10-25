@@ -26,3 +26,12 @@ Watch the following videos on Principal Component analysis:
 
 [StatQuest: Principal Component Analysis, Step-by-Step](https://www.youtube.com/watch?v=FgakZw6K1QQ)
 
+Review the Assignment: 
+
+**Spanish**
+
+[![Spanish](https://img.youtube.com/vi/ZiYTVAdRN-Q/0.jpg)](https://youtube.com/watch?v=ZiYTVAdRN-Q)
+
+**English** 
+
+[![English](https://img.youtube.com/vi/3CGW0EiXkx8/0.jpg)](https://youtube.com/watch?v=3CGW0EiXkx8)
