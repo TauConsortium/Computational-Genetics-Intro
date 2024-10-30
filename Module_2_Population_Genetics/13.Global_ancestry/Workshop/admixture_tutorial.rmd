@@ -1,0 +1,310 @@
+---
+title: "ADMIXTURE analysis"
+author: "Juliana Acosta-Uribe"
+date: '2024-29-10'
+output: html_document
+---
+
+# Principal Component Analysis
+#### Developed by Juliana Acosta-Uribe
+
+### Data:
+In this tutorial we will perform a ADMIXTURE analyses of a subset of individuals from the [1000 Genome project](https://www.internationalgenome.org/) `1000G.toy`
+
+However, you can use your own plink formatted .*bed*, .*fam*, .*bim* set
+
+
+### Software:
+-[R](https://www.r-project.org/) or [RStudio](https://posit.co/download/rstudio-desktop/)\
+-[plink](https://www.cog-genomics.org/plink2/)\
+-[king](https://www.kingrelatedness.com/)\
+-[ADMIXTURE](https://dalexander.github.io/admixture/download.html) \
+Alexander, David H., and Kenneth Lange. "Enhancements to the ADMIXTURE algorithm for individual ancestry estimation." BMC bioinformatics 12 (2011): 1-6.\
+-[pong](https://github.com/ramachandran-lab/pong) \
+Aaron A. Behr and others, pong: fast analysis and visualization of latent clusters in population genetic data, Bioinformatics, Volume 32, Issue 18, September 2016, Pages 2817–2823
+
+
+### Environment
+This script is designed to be run as an [R markdown](https://rmarkdown.rstudio.com/lesson-1.html) file in R Studio. \
+This way you can run it in a step-by-step mode. You could also run it directly from the r command line if you already have a dataset of unrelated individuals and a dataframe specifying which population they belong to. 
+```         
+library(rmarkdown)
+render("path/to/your/file.Rmd")
+```
+
+Specify your prefix and the path for your working directory and required software in the following chunk:
+```{r environment-setup}
+if (!require("knitr", quietly = TRUE))
+install.packages("knitr")
+library(knitr)
+
+# Set your working directory:
+## Edit 'root.dir' and 'setwd' with the path to your working directory
+knitr::opts_chunk$set(root.dir = "~/Documents/Research/REDLAT/Training/2024/13/Archivos/",
+                      dev = "png",
+                      dpi = 300,
+                      echo = FALSE,
+                      cache = TRUE)
+setwd("~/Documents/Research/REDLAT/Training/2024/13/Archivos/")
+
+# Set up path to software:
+## Give the paths to plink, king
+Sys.setenv(plink='/usr/local/bin/plink')
+Sys.setenv(king='/usr/local/bin/king')
+Sys.setenv(admixture='/Users/acostauribe/Documents/Research/REDLAT/Training/2024/13/Archivos/dist/admixture_macosx-1.3.0/admixture')
+Sys.setenv(pong='/Users/acostauribe/opt/anaconda3/bin/pong')
+
+# Give the name of your starting file without the .bed or .vcf.gz extension
+prefix='1000G.toy.unr.maf.ld'
+Sys.setenv(prefix=prefix)
+```
+
+
+### ADMIXTURE Analysis workflow
+
+This analyses requires a set of unrelated markers and unrelated individuals. Filter for relatedness, Minor allelic frequency and Linkage Disequilibrium (See PCA tutorial)
+
+
+#### Unsupervised analysis
+
+This type of analysis is useful when you have a single, relatively homogeneous population where you want to know the best number of ancestral component to use for modeling. 
+
+Before determining which is the best number of populations (K), you should iterate over multiple k values, I normally model for k= 2-10 and iterate 20 times. 
+
+Choose number of iterations and populations (K) you want to do:
+```{r set-up admixture}
+admixture_iterations=3
+Sys.setenv(admixture_iterations=admixture_iterations)
+
+k_model=3
+Sys.setenv(k_model=k_model)
+```
+
+Run admixture :
+
+`--cv` calculates the cross validation error and adds it to the .log file \
+`-s` allows you to add a seed, in this case we use time.
+`-j` allows you specify the number of CPUs to use \
+```{bash run-admixture}
+declare -i iterations=$admixture_iterations
+declare -i model=$k_model
+
+for i in $(seq 1 $iterations)
+do
+        echo "Starting" Iteration_${i}
+  	    mkdir Iteration_${i}
+        for k in $(seq 2 $model) 
+        do
+                echo "Starting K of " ${k}
+                $admixture $prefix.bed --cv ${k} -s time | tee $prefix.K${k}.I${i}.log
+                mv $prefix.K${k}.* ./Iteration_${i}
+                mv *.P ./Iteration_${i}
+                mv *.Q ./Iteration_${i}
+                echo "Finished K of " ${k}
+        done
+        echo "Finished" Iteration_${i}
+done
+```
+Each run of admixture will create the following files:
+- *prefix.{k}.P* each line is a variant
+- *prefix.{k}.Q*
+- *prefix.K{k}.I{i}.log*
+
+
+**Get the Cross Validation (CV) error from each run**
+
+We can use a bash function called 'grep' to create a single file with all the CV errors from the .log files
+```{bash get-cv-error}
+
+declare -i iterations=$admixture_iterations
+declare -i model=$k_model
+
+for i in $(seq 1 $iterations)
+do
+        echo "Starting" Iteration_${i}
+        for k in $(seq 2 $model)
+        do
+            echo "Starting K of " ${k}
+            grep "CV error" ./Iteration_${i}/$prefix.K${k}.I${i}.log >> $prefix.CVerror.txt
+        done
+done
+```
+
+We can use a bash function called 'sed' to clean the $prefix.CVerror.txt file
+``sed -e 's/STRING_TO_REPLACE/STRING_TO_REPLACE_IT/' filename > new_filename``
+
+```{bash edit-cv-error}
+sed -e 's/CV error (K=//' -e 's/): / /' $prefix.CVerror.txt > CV_error.txt
+```
+
+
+```{r plot-cv-error}
+if (!require("ggplot2", quietly = TRUE))
+install.packages("ggplot2")
+library(ggplot2)
+
+# Import data
+admixture_data = read.delim("CV_error.txt", header =F, sep=" ")
+
+# Add Column names
+colnames(admixture_data) = c("K", "CV.error")
+
+# Get the mean of each CV error per K
+mean_cv = aggregate(admixture_data, list(admixture_data$K), mean)
+
+# Plot 
+ggplot(admixture_data, aes(x = K, y = CV.error)) +
+  geom_point(shape = 16, color = "blue", alpha = 0.3) +
+  xlab("Ancestral populations (K)") +
+  ylab("CV error") +
+  ggtitle("Cross Validation Error") +
+  theme_bw() +
+  geom_line(data = mean_cv, aes(x = K, y = CV.error), color = "gray", linetype = "dashed") +
+  scale_x_continuous(breaks = seq(min(admixture_data$K), max(admixture_data$K), by = 1))
+ggsave(filename = "cverror.png",
+       width = 6, height = 4, dpi = 300)
+```
+
+
+**Plot your ADMIXTURE results using pong**
+
+You can use base R or ggplot to plot your ADMIXTURE results, but i recommend a software called pong. \
+Pong installation will not be covered by this tutorial. More information on the Ramachandran Lab [GitHub page](https://github.com/ramachandran-lab/pong)
+
+pong accepts clustering output files, or Q matrices, from a variety of clustering inference programs, including ADMIXTURE
+
+These are the arguments we will be using for our plot:
+``-m FILEMAP, --filemap FILEMAP``
+
+A FILEMAP is a three-column, tab-delimited file. Each line contains the following information about a single Q matrix:
+
+- A unique ID (e.g. iter5_K=7; this must contain at least one letter, and cannot contain a hashmark/hashtag or a period. Integers, spaces, and other special characters are accepted.)
+- The K value
+- The Q matrix file path, relative to the filemap. Thus, if the filemap is in the same directory as the Q matrix files, this is just the name of the Q matrix file.
+
+It is important that the columns of your filemap are in the right order and that the file is tab-delimited. Use the filemap provided with the example dataset for reference. U
+
+example:
+```
+I1_K2	2	/Iteration_1/1000G.toy.2.Q
+I1_K3	3	/Iteration_1/1000G.toy.3.Q
+I2_K2	2	/Iteration_2/1000G.toy.2.Q
+I2_K3	3	/Iteration_2/1000G.toy.3.Q
+I3_K2	2	/Iteration_3/1000G.toy.2.Q
+I3_K3	3	/Iteration_3/1000G.toy.3.Q
+```
+
+You can generate your 'filemap' using this bash script
+```{bash pong-filemap}
+declare -i iterations=$admixture_iterations
+declare -i model=$k_model
+
+for i in $(seq 1 $iterations)
+do
+        for k in $(seq 2 $model)
+        do
+          echo -e "I"$i"_K"$k"\t"$k"\t./Iteration_"${i}"/"$prefix"."$k".Q" >> filemap.txt
+        done
+done
+```
+
+
+``-i IND2POP, --ind2pop IND2POP`` \
+ind2pop is an ASCII file with one column and the same number of lines as the input .fam file. Each line is the population that the corresponding individual belongs to.
+
+example:
+
+EUR
+EUR
+AFR
+AMR
+
+You can do your 'IND2POP' file with the following script, assuming you have a metadata file that has a column stating the population and another column with the same ID as in the .fam file. We also need to add the correspondent continent or subpopulation that each individual belongs to. For the '1000G.toy' dataset I will use the `population_lookup.txt` dataframe. Using the `match` function, we will create a new column in 'eigenvec' called 'Continent' according to the identity of the Population column
+```{r}
+# Load necessary library
+if (!require("dplyr", quietly = TRUE))
+install.packages("dplyr")
+library(dplyr)
+
+# Read the fam file
+fam_file = read.delim(paste0(prefix, ".fam"), sep = ' ', header = FALSE, 
+                       col.names = c("FID", "IID", "DAD", "MOM", "SEX", "PHE"))
+
+# Read the metadata file
+lookup_dataframe = read.delim("population_lookup.txt", header = TRUE )
+
+# Merge fam_file with sample_metadata based on the IID column
+fam_pop = fam_file %>%
+  left_join(lookup_dataframe, by = c("IID" = "IID"))
+
+# Select the SUPERPOP2 column and save it to a file
+ind2pop = fam_pop %>%
+  select(CONTINENT)
+
+write.table(ind2pop, file = "ind2pop.txt", quote = FALSE, row.names = FALSE, col.names = FALSE)
+
+```
+
+``-n POP_NAMES, --pop_names POP_NAMES`` \
+ASCII file with one column and the names of populations to be included in the plot.
+
+example:
+
+EAS
+EUR
+AMR
+
+```{r}
+pop_names = unique(ind2pop)
+write.table(pop_names, file = "pop_names.txt", quote = FALSE, row.names = FALSE, col.names = FALSE)
+```
+
+Run pong:
+```{bash pong}
+$pong --filemap filemap.txt --ind2pop ind2pop.txt --pop_names pop_names.txt --port 6000
+```
+
+If you get `OSError: [Errno 48] Address already in use` choose a different port number and try again
+
+
+#### Sample projection analysis.
+
+As the ADMIXTURE manual states "For study samples which do
+not include a novel population, an efficient way of estimating individual ancestry is to
+project the new samples on to the population structure (allele frequencies) learned from
+the reference panels", which is a similar approach than the one we had with the PCA.
+
+Sample projection ADMIXTURE requires two datasets; one for Reference cohorts and one for target samples. NOTE: Both sets must have the exact same SNPs. 
+
+
+**Check data**
+Since I merged the redlat and 1000GP datasets before running the PCA, I will use the pre-merging files for this
+
+```{r}
+# give the base name for the bim bed fam of the reference and target plink datasets
+reference='reference_prefix'
+Sys.setenv(reference=reference)
+
+study='target_prefix'
+Sys.setenv(study=study)
+```
+
+```{bash verify-datasets}
+# Verify the two datasets have the same set of SNPs
+diff -s $reference.bim $study.bim
+```
+If they dont have the same set, you have to prune each file until they have the exact same markers.
+
+Run unsupervised ADMIXTURE in the reference dataset and then use learned allele frequencies as (fixed) input for projecting the study samples. 
+```{bash run-admixture-reference}
+for k in $(seq 2 10) 
+do
+  admixture $reference.bed --cv ${k} -s time | tee $reference.K$k.log
+  cp $reference.$k.P $study.$k.P.in
+  admixture -P $study.bed ${k} -s time -j12 | tee $study.K$k.projection.log
+done
+```
+
+Use pong to plot it.
+
+If you want to plot reference and study side by side, you need to concatenaat the Q files, Ind2pop and pop_names into a simgle file of each type.
