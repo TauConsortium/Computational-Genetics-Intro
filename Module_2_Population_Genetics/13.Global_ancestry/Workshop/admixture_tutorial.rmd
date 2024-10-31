@@ -1,7 +1,7 @@
 ---
 title: "ADMIXTURE analysis"
 author: "Juliana Acosta-Uribe"
-date: '2024-29-10'
+date: '2024-31-10'
 output: html_document
 ---
 
@@ -15,11 +15,11 @@ However, you can use your own plink formatted .*bed*, .*fam*, .*bim* set
 
 
 ### Software:
--[R](https://www.r-project.org/) or [RStudio](https://posit.co/download/rstudio-desktop/)\
--[plink](https://www.cog-genomics.org/plink2/)\
--[king](https://www.kingrelatedness.com/)\
--[ADMIXTURE](https://dalexander.github.io/admixture/download.html) \
-Alexander, David H., and Kenneth Lange. "Enhancements to the ADMIXTURE algorithm for individual ancestry estimation." BMC bioinformatics 12 (2011): 1-6.\
+-[R](https://www.r-project.org/) or [RStudio](https://posit.co/download/rstudio-desktop/)
+-[plink](https://www.cog-genomics.org/plink2/)
+-[king](https://www.kingrelatedness.com/)
+-[ADMIXTURE](https://dalexander.github.io/admixture/download.html) 
+Alexander, David H., and Kenneth Lange. "Enhancements to the ADMIXTURE algorithm for individual ancestry estimation." BMC bioinformatics 12 (2011): 1-6.
 -[pong](https://github.com/ramachandran-lab/pong) \
 Aaron A. Behr and others, pong: fast analysis and visualization of latent clusters in population genetic data, Bioinformatics, Volume 32, Issue 18, September 2016, Pages 2817–2823
 
@@ -32,7 +32,9 @@ library(rmarkdown)
 render("path/to/your/file.Rmd")
 ```
 
-Specify your prefix and the path for your working directory and required software in the following chunk:
+Specify your prefix and the path for your working directory and required software in the following chunk. \
+For this tutorial we will use the 1000GP.toy files we filtered for MAF and LD in our previous session
+
 ```{r environment-setup}
 if (!require("knitr", quietly = TRUE))
 install.packages("knitr")
@@ -40,19 +42,19 @@ library(knitr)
 
 # Set your working directory:
 ## Edit 'root.dir' and 'setwd' with the path to your working directory
-knitr::opts_chunk$set(root.dir = "~/Documents/Research/REDLAT/Training/2024/13/Archivos/",
+knitr::opts_chunk$set(root.dir = "/path/to/directory/",
                       dev = "png",
                       dpi = 300,
                       echo = FALSE,
                       cache = TRUE)
-setwd("~/Documents/Research/REDLAT/Training/2024/13/Archivos/")
+setwd("~/path/to/directory/")
 
 # Set up path to software:
 ## Give the paths to plink, king
-Sys.setenv(plink='/usr/local/bin/plink')
-Sys.setenv(king='/usr/local/bin/king')
-Sys.setenv(admixture='/Users/acostauribe/Documents/Research/REDLAT/Training/2024/13/Archivos/dist/admixture_macosx-1.3.0/admixture')
-Sys.setenv(pong='/Users/acostauribe/opt/anaconda3/bin/pong')
+Sys.setenv(plink='/path/to/plink')
+Sys.setenv(king='/path/to/king')
+Sys.setenv(admixture='/path/to/admixture')
+Sys.setenv(pong='/path/to/pong')
 
 # Give the name of your starting file without the .bed or .vcf.gz extension
 prefix='1000G.toy.unr.maf.ld'
@@ -72,11 +74,11 @@ This type of analysis is useful when you have a single, relatively homogeneous p
 Before determining which is the best number of populations (K), you should iterate over multiple k values, I normally model for k= 2-10 and iterate 20 times. 
 
 Choose number of iterations and populations (K) you want to do:
-```{r set-up admixture}
+```{r set-up-admixture}
 admixture_iterations=3
 Sys.setenv(admixture_iterations=admixture_iterations)
 
-k_model=3
+k_model=5
 Sys.setenv(k_model=k_model)
 ```
 
@@ -84,8 +86,8 @@ Run admixture :
 
 `--cv` calculates the cross validation error and adds it to the .log file \
 `-s` allows you to add a seed, in this case we use time.
-`-j` allows you specify the number of CPUs to use \
-```{bash run-admixture}
+`-j` allows you specify the number of CPUs to use 
+```{bash run-admixture, include=FALSE}
 declare -i iterations=$admixture_iterations
 declare -i model=$k_model
 
@@ -154,7 +156,7 @@ mean_cv = aggregate(admixture_data, list(admixture_data$K), mean)
 
 # Plot 
 ggplot(admixture_data, aes(x = K, y = CV.error)) +
-  geom_point(shape = 16, color = "blue", alpha = 0.3) +
+  geom_point(shape = 16, color = "red", alpha = 0.3) +
   xlab("Ancestral populations (K)") +
   ylab("CV error") +
   ggtitle("Cross Validation Error") +
@@ -260,22 +262,26 @@ write.table(pop_names, file = "pop_names.txt", quote = FALSE, row.names = FALSE,
 ```
 
 Run pong:
-```{bash pong}
-$pong --filemap filemap.txt --ind2pop ind2pop.txt --pop_names pop_names.txt --port 6000
+```{bash pong, echo=TRUE}
+$pong --filemap filemap.txt --ind2pop ind2pop.txt --pop_names pop_names.txt --port 4321
 ```
+
+Open a web explorer and write http://localhost:4321/ 
+
+Replace the 4321 with the port you chose. Change the port number every time you run pong
 
 If you get `OSError: [Errno 48] Address already in use` choose a different port number and try again
 
 
 #### Sample projection analysis.
 
-As the ADMIXTURE manual states "For study samples which do
-not include a novel population, an efficient way of estimating individual ancestry is to
-project the new samples on to the population structure (allele frequencies) learned from
-the reference panels", which is a similar approach than the one we had with the PCA.
-
+By using the -P option, the population allele frequencies inferred from one dataset can be provided as input for inference of admixture proportions in a second dataset. This is useful when individuals of unknown ancestry are being analyzed against the background of a reference sample set. Please see the ADMIXTURE manual for a complete listing of options and more detail, 
 Sample projection ADMIXTURE requires two datasets; one for Reference cohorts and one for target samples. NOTE: Both sets must have the exact same SNPs. 
 
+**Challenge**
+
+Take $prefix.bed/bim/fam and extract reference dataset with the EUR, AFR and EAS individuals using plink.\
+Extract AMR samples using plink for yous study samples. 
 
 **Check data**
 Since I merged the redlat and 1000GP datasets before running the PCA, I will use the pre-merging files for this
@@ -307,4 +313,4 @@ done
 
 Use pong to plot it.
 
-If you want to plot reference and study side by side, you need to concatenaat the Q files, Ind2pop and pop_names into a simgle file of each type.
+If you want to plot reference and study side by side, you need to concatenate the Q files, Ind2pop and pop_names into a single file of each type.
