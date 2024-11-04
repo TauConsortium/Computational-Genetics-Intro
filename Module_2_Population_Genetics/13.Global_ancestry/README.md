@@ -16,6 +16,10 @@ Part 2:
 
 [![Spanish](https://img.youtube.com/vi/BXxJKg3OCFE/0.jpg)](https://youtube.com/watch?v=BXxJKg3OCFE)
 
+**English** 
+
+[![English](https://img.youtube.com/vi/Gur4edpxYMY/0.jpg)](https://youtube.com/watch?v=Gur4edpxYMY)
+
 
 Global ancestry will be explored with two statistical approaches; Principal component analysis (PLINK) and Ancestry fractions (ADMIXTURE). We will use a subset of the 1000 Genomes project dataset (1000GP.toy.tar.gz) that is available in the workshop directory. 
 
