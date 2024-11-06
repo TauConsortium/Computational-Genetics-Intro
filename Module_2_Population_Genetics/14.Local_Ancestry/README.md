@@ -13,3 +13,5 @@ The following **Workshop** material will be available at https://kosik.cnsi.ucsb
 - chr19.b38.gmap.gz.rfmix2
 - local_ancestry.sh
 - sample_map.txt
+
+There are GitHub repositories with code for plotting results: https://github.com/alisi1989/RFMIX2-Pipeline-to-plot
