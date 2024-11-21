@@ -5,8 +5,7 @@ Watch our class here:
 **Spanish**
 
 [![Spanish](https://img.youtube.com/vi/oCxnQW6H_kE
-/0.jpg)](https://youtube.com/watch?v=oCxnQW6H_kE
-)
+/0.jpg)](https://youtube.com/watch?v=oCxnQW6H_kE)
 
 **English** 
 
