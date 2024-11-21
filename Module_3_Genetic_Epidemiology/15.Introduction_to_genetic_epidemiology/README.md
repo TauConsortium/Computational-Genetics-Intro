@@ -1,6 +1,6 @@
 ## Introduction to Genetic Epidemiology
 
-Watch our class here: 
+Watch our class: 
 
 **Spanish**
 
