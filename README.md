@@ -9,7 +9,7 @@ The syllabus ([spanish](Syllabus-Espanol.pdf)/[english](Syllabus-English.pdf)) p
 This course is an introductory series divided in three modules:
 - [Introduction to computational genetics](Module_1_Introduction)
 - [Population genetics](Module_2_Population_Genetics)
-- Genetic epidemiology
+- [Genetic epidemiology](Module_3_Genetic_Epidemiology)
 
 This repository is structures as follows:  
 ```
