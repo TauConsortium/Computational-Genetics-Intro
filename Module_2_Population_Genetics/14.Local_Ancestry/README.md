@@ -24,3 +24,11 @@ The following **Workshop** material will be available at https://kosik.cnsi.ucsb
 - sample_map.txt
 
 There are GitHub repositories with code for plotting results: https://github.com/alisi1989/RFMIX2-Pipeline-to-plot
+
+Review the assignment: 
+
+**Spanish**
+
+[![Spanish](https://img.youtube.com/vi/XDLh_D-eEgg/0.jpg)](https://youtube.com/watch?v=XDLh_D-eEgg)
+
+
