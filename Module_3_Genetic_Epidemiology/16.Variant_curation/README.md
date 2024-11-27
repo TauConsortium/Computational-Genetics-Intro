@@ -2,7 +2,7 @@ Watch our class:
 
 **Spanish**
 
-[![Spanish](https://img.youtube.com/vi//WOFZH74Y8DQ/0.jpg)](https://youtube.com/watch?v=WOFZH74Y8DQ)
+[![Spanish](https://img.youtube.com/vi/WOFZH74Y8DQ/0.jpg)](https://youtube.com/watch?v=WOFZH74Y8DQ)
 
 
 ## Variant Curation
