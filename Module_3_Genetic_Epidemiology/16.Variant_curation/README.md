@@ -4,6 +4,10 @@ Watch our class:
 
 [![Spanish](https://img.youtube.com/vi/WOFZH74Y8DQ/0.jpg)](https://youtube.com/watch?v=WOFZH74Y8DQ)
 
+**English**
+
+[![English](https://img.youtube.com/vi/-PKPc09myO8/0.jpg)](https://youtube.com/watch?v=-PKPc09myO8)
+
 
 ## Variant Curation
 
