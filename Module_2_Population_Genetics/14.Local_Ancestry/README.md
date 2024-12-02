@@ -33,6 +33,6 @@ Review the assignment:
 
 **English** 
 
-[![English](https://img.youtube.com/vid/w_XG2b39e8/0.jpg)](https://youtube.com/watch?v=dw_XG2b39e8)
+[![English](https://img.youtube.com/vi/dw_XG2b39e8/0.jpg)](https://youtube.com/watch?v=dw_XG2b39e8)
 
 
