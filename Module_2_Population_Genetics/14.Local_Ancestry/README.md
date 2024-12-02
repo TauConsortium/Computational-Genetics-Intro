@@ -31,4 +31,8 @@ Review the assignment:
 
 [![Spanish](https://img.youtube.com/vi/XDLh_D-eEgg/0.jpg)](https://youtube.com/watch?v=XDLh_D-eEgg)
 
+**English** 
+
+[![English](https://img.youtube.com/vid/w_XG2b39e8/0.jpg)](https://youtube.com/watch?v=dw_XG2b39e8)
+
 
