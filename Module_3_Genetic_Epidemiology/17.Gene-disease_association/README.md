@@ -15,6 +15,7 @@ Watch our class:
 Clinical genome Resource
 - Ott 2011 - Family-based designs for genome-wide association studies
 - Ott, Wang, Leal - 2015 - Genetic linkage analysis in the age of whole-genome sequencing
+- Dias 2024 - COMMENTARY Toward trustable use of machine learning models of variant effects in the clinic
 
 
 
