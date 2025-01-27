@@ -1,5 +1,10 @@
 ## Polygenic Risk Score (PRS)
 
+Watch our class: 
+
+**English**
+
+[![English](https://img.youtube.com/vi/jH7ujBfMqT4/0.jpg)](https://youtube.com/watch?v=jH7ujBfMqT4)
 
 
 **Recommended Readings:**
